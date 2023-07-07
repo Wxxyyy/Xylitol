@@ -29,16 +29,17 @@ public class UserController : Controller
     /// <summary>
     /// 获取用户列表
     /// </summary>
+    /// <param name="query"></param>
     /// <returns></returns>
     [Post]
-    public async Task<JsonResult> GetUserList(UserQuery searchquery)
+    public async Task<JsonResult> GetUserList(UserQuery query)
     {
-        return Json(await _userService.GetUserListByLayer(searchquery));
+        return Json(await _userService.GetUserListByLayer(query));
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-        return View("Error!");
+        return View();
     }
 }

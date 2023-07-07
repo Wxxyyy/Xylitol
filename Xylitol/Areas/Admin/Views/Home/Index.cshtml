@@ -33,7 +33,7 @@
                                 <span>远程桌面管理</span>
                             </a>
                             <ul class="nav nav-subnav">
-                                <li> <a class="multitabs" asp-area="Admin" asp-controller="XyRdp" asp-action="List">远程列表</a> </li>
+                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Home" asp-action="Index">远程列表</a> </li>
                             </ul>
                         </li>
 
@@ -44,7 +44,7 @@
                             </a>
                             <ul class="nav nav-subnav">
                                 <li> <a class="multitabs" asp-area="Admin" asp-controller="User" asp-action="List">用户列表</a> </li>
-                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Role" asp-action="Index">角色列表</a> </li>
+                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Home" asp-action="Index">角色列表</a> </li>
                             </ul>
                         </li>
 
@@ -54,9 +54,9 @@
                                 <span>系统管理</span>
                             </a>
                             <ul class="nav nav-subnav">
-                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Sys" asp-action="MenuManage">菜单管理</a> </li>
-                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Layout" asp-action="BreakPoint">用户列表</a> </li>
-                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Layout" asp-action="BreakPoint">角色列表</a> </li>
+                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Home" asp-action="Index">菜单管理</a> </li>
+                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Home" asp-action="Index">用户列表</a> </li>
+                                <li> <a class="multitabs" asp-area="Admin" asp-controller="Home" asp-action="Index">角色列表</a> </li>
                             </ul>
                         </li>
 
@@ -314,7 +314,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a class="dropdown-item" asp-area="Iframe" asp-controller="Pages" asp-action="Login1">
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">
                                     <i class="mdi mdi-logout-variant"></i>
                                     <span>退出登录</span>
                                 </a>

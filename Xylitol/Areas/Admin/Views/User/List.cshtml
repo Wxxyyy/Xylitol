@@ -262,7 +262,7 @@
             xy.openTab(
                 {
                     title: "编辑用户",
-                    url: "@Url.Action("Edit","User")?userId=" + row.userId,
+                    url: "@Url.Action("List","User")?userId=" + row.userId,
                     fromurl: "@Url.Action("List","User")",
                     show: true
                 }
@@ -297,11 +297,11 @@
         });
 
         $(document).on('click', '#btn_add', function () {
-            //OpenTab('新增用户', '@(Url.Action("Add", "User"))', '@(Url.Action("List"))', true);
+            //OpenTab('新增用户', '@(Url.Action("List", "User"))', '@(Url.Action("List"))', true);
             xy.openTab(
                 {
                     title: "新增用户",
-                    url: "@Url.Action("Add","User")",
+                    url: "@Url.Action("List","User")",
                     fromurl: "@Url.Action("List","User")"
                 }
             );

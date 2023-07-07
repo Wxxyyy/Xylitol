@@ -22,7 +22,15 @@ public class Startup : AppStartup
         services.AddCorsAccessor();
         //
         services.AddControllersWithViews()
-            .AddAppLocalization()  // 注册多语言
+             // Furion注册多语言
+             //.AddAppLocalization()
+             // 第三方注册多语言
+             .AddAppLocalization(settings =>
+             {
+                 // 集成第三方 json 配置
+                 services.AddJsonLocalization(options => options.ResourcesPath = settings.ResourcesPath);
+             })
+             // 规范化返回结果
             .AddInjectWithUnifyResult<XyResultProvider>();
     }
 
