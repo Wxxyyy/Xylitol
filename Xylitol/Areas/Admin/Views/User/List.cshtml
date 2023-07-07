@@ -1,0 +1,333 @@
+@{
+
+}
+
+@section Styles{
+    <!--表格插件css-->
+    <link rel="stylesheet" href="~/lib/bootstrap-table/bootstrap-table.css">
+}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <header class="card-header">
+                    <div class="card-title">用户列表</div>
+                </header>
+                <div class="card-body">
+                    @* 工具栏 *@
+                    <div id="toolbar" class="toolbar-btn-action">
+                        <button id="btn_add" type="button" class="btn btn-primary me-1">
+                            <span class="mdi mdi-plus" aria-hidden="true"></span>新增
+                        </button>
+                        <button id="btn_enable" type="button" class="btn btn-success me-1">
+                            <span class="mdi mdi-check" aria-hidden="true"></span>启用
+                        </button>
+                        <button id="btn_disable" type="button" class="btn btn-warning me-1">
+                            <span class="mdi mdi-block-helper" aria-hidden="true"></span>禁用
+                        </button>
+                        <button id="btn_delete" type="button" class="btn btn-danger">
+                            <span class="mdi mdi-window-close" aria-hidden="true"></span>删除
+                        </button>
+                    </div>
+                    @* 表格主体 *@
+                    <table id="table" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap"></table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+@section Scripts{
+    <script src="~/lib/bootstrap-table/bootstrap-table.js"></script>
+    <script src="~/lib/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="~/lib/layer/layer.min.js"></script>
+    <script type="text/javascript" src="~/js/main.min.js" asp-append-version="true"></script>
+    
+    <script>
+
+        /**
+         * 分页相关的配置
+         **/
+        const pagination = {
+            // 分页方式：[client] 客户端分页，[server] 服务端分页
+            sidePagination: "server",
+            // 初始化加载第一页，默认第一页
+            pageNumber: 1,
+            // 每页的记录行数
+            pageSize: 10,
+            // 可供选择的每页的行数 - (亲测大于1000存在渲染问题)
+            pageList: [10, 20, 50, 100],
+            // 在上百页的情况下体验较好 - 能够显示首尾页
+            paginationLoop: true,
+            // 展示首尾页的最小页数
+            paginationPagesBySide: 2
+        };
+
+        /**
+         * 按钮相关配置
+         **/
+        const button = {
+            // 按钮的类
+            buttonsClass: 'default',
+            // 类名前缀
+            buttonsPrefix: 'btn'
+        }
+
+        /**
+         * 图标相关配置
+         **/
+        const icon = {
+            // 图标前缀
+            iconsPrefix: 'mdi',
+            // 图标大小
+            iconSize: 'mini',
+            // 图标的设置
+            icons: {
+                paginationSwitchDown: 'mdi-door-closed',
+                paginationSwitchUp: 'mdi-door-open',
+                refresh: 'mdi-refresh',
+                toggleOff: 'mdi-toggle-switch-off',
+                toggleOn: 'mdi-toggle-switch',
+                columns: 'mdi-table-column-remove',
+                detailOpen: 'mdi-plus',
+                detailClose: 'mdi-minus',
+                fullscreen: 'mdi-monitor-screenshot',
+                search: 'mdi-table-search',
+                clearSearch: 'mdi-trash-can-outline'
+            }
+        };
+
+        /**
+         * 表格相关的配置
+         **/
+        const table = {
+            classes: 'table table-bordered table-hover table-striped lyear-table',
+            // 请求地址
+            url: '@(Url.Action("GetUserList"))',
+            // 唯一ID字段
+            uniqueId: 'userId',
+            // 每行的唯一标识字段
+            idField: 'userAccount',
+            // 是否启用点击选中行
+            clickToSelect: true,
+            // 是否显示详细视图和列表视图的切换按钮(clickToSelect同时设置为true时点击会报错)
+            // showToggle: true,
+            // 请求得到的数据类型
+            dataType: 'json',
+            // 请求方法
+            method: 'get',
+            // 工具按钮容器
+            toolbar: '#toolbar',
+            // 是否分页
+            pagination: true,
+            // 是否显示所有的列
+            showColumns: true,
+            // 是否显示刷新按钮
+            showRefresh: true,
+            // 显示图标
+            showButtonIcons: true,
+            // 显示文本
+            showButtonText: false,
+            // 显示全屏
+            showFullscreen: true,
+            // 开关控制分页
+            showPaginationSwitch: true,
+            // 总数字段
+            totalField: 'total',
+            dataField: "rows",
+            responseHandler: function (res) {
+                console.log(res)
+                return res.data;
+            },
+            // 当字段为 undefined 显示
+            undefinedText: '空',
+            // 排序方式
+            sortOrder: "asc",
+            ...icon,
+            ...pagination,
+            ...button
+        };
+
+        /**
+         * 用于演示的列信息
+         **/
+        const columns = [
+            { field: 'example', checkbox: true, width: 2, widthUnit: 'rem' },
+            { field: 'userId', title: '唯一Id', align: 'center', visible: false },
+            { field: 'userAccount', align: 'center', title: '用户名' },
+            { field: 'nickName', align: 'center', title: '昵称' },
+            { field: 'userName', align: 'center', title: '姓名' },
+            { field: 'userGender', align: 'center', title: '性别', formatter: TagGender },
+            { field: 'userPhone', align: 'center', title: '电话' },
+            { field: 'userEmail', align: 'center', title: '邮件' },
+           // { field: 'userStatus', align: 'center', title: '出生日期' },
+           // { field: 'address', align: 'center', title: '地址' },
+           // { field: 'signature', align: 'center', title: '签名', visible: false },
+            { field: 'userRemark', align: 'center', title: '备注',formatter: CustomRemarks,cellStyle: RemarksCss},
+           // { field: 'lastLoginDt', align: 'center', title: '最后登录时间', visible: false },
+           // { field: 'lastLoginIp', align: 'center', title: '最后登录IP', visible: false },
+           // { field: 'lastLoginDev', align: 'center', title: '最后登录设备' , visible: false},
+           // { field: 'createUid', align: 'center', title: '创建用户UID', visible: false },
+           // { field: 'createDt', align: 'center', title: '创建时间', visible: false},
+           // { field: 'updateUid', align: 'center', title: '更新用户', visible: false },
+           // { field: 'updateDt', align: 'center', title: '更新时间', visible: false },
+            { field: 'userStatus', title: '状态', align: 'center',formatter: TagStatus },
+            {
+                field: 'operate', title: '操作', align: 'center',
+                formatter: btnGroup,  // 自定义方法
+                events: {
+                    'click .sel-btn': function (event, value, row, index) {
+                        event.stopPropagation();
+                        SelUser(row);
+                    },
+                    'click .edit-btn': function (event, value, row, index) {
+                        event.stopPropagation();
+                        editUser(row);
+                    },
+                    'click .del-btn': function (event, value, row, index) {
+                        event.stopPropagation();
+                        delUser(row);
+                    }
+                }
+            }
+        ];
+
+        // 自定义备注列样式
+        function RemarksCss(value, row, index, field) {
+            return { css: { "min-width": "5rem", "white-space": "nowrap", "test-overflow": "ellipsis", "overflow": "hidden", "max-width": "10rem" } }
+        }
+
+        // 自定义备注列
+        function CustomRemarks(value, row, index) {
+            let html =
+                "<span data-bs-toggle='tooltip' data-bs-placement='bottom' style='display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;' title=" + (value == null ? "空" : value) + ">" + (value == null ? "空" : value) + "</span>";
+            return html;
+        }
+
+        // 自定义性别
+        function TagGender(value, row, index) {
+            var value = "";
+            if (row.userGender == '0') {
+                value = '<span class="badge bg-cyan">男</span>';
+            } else if (row.userGender == '1') {
+                value = '<span class="badge bg-pink">女</span>';
+            } else {
+                value = '<span">🌸</span>';
+            }
+            return value;
+        }
+
+        // 自定义状态
+        function TagStatus(value, row, index) {
+            console.log(row);
+            var value = "";
+            if (row.userStatus == '0') {
+                value = '<span class="badge bg-success">正常</span>';
+            } else if (row.userStatus == '1') {
+                value = '<span class="badge bg-danger">禁用</span>';
+            } else {
+                value = '<span class="badge bg-secondary">封禁</span>';
+            }
+            return value;
+        }
+
+        // 自定义操作按钮
+        function btnGroup() {
+            let html =
+                '<a href="#!" class="btn btn-sm btn-info me-1 sel-btn" title="查看" data-bs-toggle="tooltip"><i class="mdi mdi-account-eye-outline"></i></a>' +
+                '<a href="#!" class="btn btn-sm btn-warning me-1 edit-btn" title="编辑" data-bs-toggle="tooltip"><i class="mdi mdi-account-edit-outline"></i></a>' +
+                '<a href="#!" class="btn btn-sm btn-danger me-1 del-btn" title="删除" data-bs-toggle="tooltip"><i class="mdi mdi-account-remove-outline"></i></a>';
+            return html;
+        }
+
+        // 操作方法 - 查看
+        function SelUser() {
+            $('.btn.save-btn').attr("disabled", true);
+            $('#UserInfoModal').find('.modal-title span').text('查看');
+            userInfoModal = new bootstrap.Modal($('#UserInfoModal').get(0), {
+                keyboard: false,
+                backdrop: 'static',
+            });
+            userInfoModal.show();
+        }
+        // 操作方法 - 编辑
+        function editUser(row) {
+            xy.openTab(
+                {
+                    title: "编辑用户",
+                    url: "@Url.Action("Edit","User")?userId=" + row.userId,
+                    fromurl: "@Url.Action("List","User")",
+                    show: true
+                }
+            );
+        }
+        // 操作方法 - 删除
+        function delUser() {
+            alert('信息删除成功');
+        }
+
+        $('table').bootstrapTable({
+            ...table,
+            // 自定义的查询参数
+            queryParams: function (params) {
+                return {
+                    // 每页数据量
+                    limit: params.limit,
+                    // sql语句起始索引
+                    offset: params.offset,
+                    page: (params.offset / params.limit) + 1,
+                    // 排序的列名
+                    sort: params.sort,
+                    // 排序方式 'asc' 'desc'
+                    sortOrder: params.order
+                };
+            },
+            columns,
+            onLoadSuccess: function (data) {
+                $("[data-bs-toggle='tooltip']").tooltip();
+            }
+
+        });
+
+        $(document).on('click', '#btn_add', function () {
+            //OpenTab('新增用户', '@(Url.Action("Add", "User"))', '@(Url.Action("List"))', true);
+            xy.openTab(
+                {
+                    title: "新增用户",
+                    url: "@Url.Action("Add","User")",
+                    fromurl: "@Url.Action("List","User")"
+                }
+            );
+        });
+
+        /**
+         * 启用用户按钮事件
+         */
+        $(document).on('click', '#btn_enable', function () {
+            alert("启用用户");
+        });
+
+        /**
+         * 禁用用户按钮事件
+         */
+        $(document).on('click', '#btn_disable', function () {
+            alert("禁用用户");
+        });
+
+        /**
+         * 删除用户按钮事件
+         */
+        $(document).on('click', '#btn_delete', '.del-btn', function () {
+            alert("删除用户");
+        });
+
+
+    </script>
+}

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="keywords" content="XyCc,XyControlCenter,后台,控制面板,后台控制中心,后台管理系统">
+    <meta name="description" content="XyCc (XyControlCenter) 是一个后台控制管理面板，将集合多项目后台控制。 [感谢：笔下光年] ">
+    <meta name="author" content="Wxy,XiaoJianJian,Xy">
+    <title>XyCc - @ViewData["Title"]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="~/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/admin/style.min.css" rel="stylesheet" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    @*Web内容*@
+    @RenderBody()
+    @*Web引用*@
+    <script type="text/javascript" src="~/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/popper.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

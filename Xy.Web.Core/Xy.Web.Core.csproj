@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<DocumentationFile>Xy.Web.Core.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Xy.Web.Core.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Xy.Application\Xy.Application.csproj" />
+		<ProjectReference Include="..\Xy.Ef.Migrations\Xy.Ef.Migrations.csproj" />
+	</ItemGroup>
+
+</Project>

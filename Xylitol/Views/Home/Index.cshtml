@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "欸嘿~ (❁´◡`❁)";
+}
+
+@*画面样式*@
+@section Styles{
+    <link rel="icon" type="image/png" href="~/favicon.ico" />
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <link href="~/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="~/css/home/main.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="canonical" href="https://xiaojianjian.cn/" />
+}
+
+@*画面主体*@
+
+@*移动页面顶部箭头*@
+<span class="mobile btn-mobile-menu" style="border-bottom:none;">
+    <i class="mdi mdi-chevron-down mdi-36px btn-mobile-menu__icon"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url('/images/background/xinghuo.jpg')">
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content animate__animated animate__jello">
+                <a href="/" title="XiaoJianJian" class="blog-button"><img src="~/images/users/wecharavatar.jpg" width="80" alt="XiaoJianJian logo" class="panel-cover__logo logo" /></a>
+                <h1 class="panel-cover__title panel-title"><a href="/" title="By Togo Wxy HomePages" class="blog-button">XiaoJianJian</a></h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">@ViewBag.verse</p>
+
+                @*底部图标型按钮-Start*@
+                <div class="navigation-wrapper">
+                    <div>
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a asp-area="Admin" asp-controller="Home" asp-action="Index" title="管理控制中心">管理控制中心</a></li>
+                                <li class="navigation__item"><a asp-controller="api" title="API接口">API接口</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div>
+                        <nav class="cover-navigation navigation--social">
+                            <ul class="navigation">
+                                <li class="navigation__item fk">
+                                    <a href="javascript:void(0);" class="btn_icon" title="QQ">
+                                        <span class="mdi mdi-qqchat mdi-24px"></span>
+                                    </a>
+                                </li>
+                                <li class="navigation__item fk">
+                                    <a href="javascript:void(0);" class="btn_icon" title="WeChat">
+                                        <span class="mdi mdi-wechat mdi-24px"></span>
+                                    </a>
+                                </li>
+                                <li class="navigation__item fk">
+                                    <a href="javascript:void(0);" class="btn_icon" title="Email">
+                                        <span class="mdi mdi-email mdi-24px"></span>
+                                    </a>
+                                </li>
+                                <li class="navigation__item fk">
+                                    <a href="javascript:void(0);" class="btn_icon" title="Give me money">
+                                        <span class="mdi mdi-currency-cny mdi-24px"></span>
+                                    </a>
+                                </li>
+                                <li class="navigation__item fk">
+                                    <a href="javascript:void(0);" class="btn_icon" rel="author" title="Github">
+                                        <span class="mdi mdi-github mdi-24px"></span>
+                                    </a>
+                                </li>
+                                <li class="navigation__item fk">
+                                    <a href="javascript:void(0);" class="btn_icon" rel="author" title="Gitee">
+                                        <span class="mdi mdi-alpha-g-box mdi-24px"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <hr class="panel-cover__divider panel-cover__divider--secondary animate__animated animate__flip" />
+            <p class="copyright animate__animated animate__fadeInUpBig">豫ICP备2021022784号<br />Copyright&nbsp;&copy;&nbsp;2022 - @(DateTime.Now.Year) <br /> 小贱贱_Wxy<br />All&nbsp;Rights&nbsp;Reserved</p>
+        </div>
+    </div>
+</header>
+
+@*脚本*@
+@section Scripts{
+    <script type="text/javascript" src="~/lib/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".btn-mobile-menu__icon").click(function () {
+                // display 为 block是显示状态，Noon是隐藏
+                "block" == $(".navigation-wrapper").css("display") ?
+                    (
+                        // 如果显示的话就隐藏
+                        $(".navigation-wrapper").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+                            $(".navigation-wrapper").toggleClass("visible animate__animated animate__hinge"),
+                                $(".navigation-wrapper").off("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend")
+                        }),
+                        $(".navigation-wrapper").toggleClass("animate__animated animate__hinge animate__animated animate__bounceInDown"),
+                        $(".btn-mobile-menu__icon").toggleClass("mdi-close mdi-chevron-down ")
+                    ) : (
+                        // 如果隐藏的话就显示
+                        $(".navigation-wrapper").toggleClass("visible animate__animated animate__bounceInDown "),
+                        $(".btn-mobile-menu__icon").toggleClass("mdi-chevron-down mdi-close")
+                    )
+            })
+
+            $(".btn_icon").click(function () {
+                alert("点什么点！还没开发完呢！");
+            })
+
+            // 页面动画执行完毕后删除动画
+
+            $(".panel-main__content").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+                $(".panel-main__content").toggleClass("animate__animated animate__jello"),
+                    $(".panel-main__content").off("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend")
+            })
+
+
+        });
+    </script>
+}

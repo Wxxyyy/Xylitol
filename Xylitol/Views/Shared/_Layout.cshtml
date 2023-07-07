@@ -1,0 +1,24 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <meta name="keywords" content="XiaoJianJian,Wxy,小贱贱,王向毅,个人导航,个人主页,个人展示页">
+    <meta name="description" content="这是一个个人的首页导航页面，便于介绍个人信息及跳转其他页面.">
+    <meta name="author" content="XiaoJianJian,Wxy,小贱贱,王向毅">
+    <title>🌸 - @ViewData["Title"]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    @* <link rel="stylesheet" href="~/Xylitol.styles.css" asp-append-version="true" /> *@
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    @*Web内容*@
+    @RenderBody()
+    @*Web引用*@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

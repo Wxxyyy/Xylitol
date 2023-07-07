@@ -1,0 +1,21 @@
+{
+    "$schema": "https://gitee.com/dotnetchina/Furion/raw/v4/schemas/v4/furion-schema.json",
+    // 规范化配置指的是配置响应结果，响应状态码等配置
+    "UnifyResultSettings": {
+      "Return200StatusCodes": [ 401, 403 ],
+      "AdaptStatusCodes": [
+        [ 401, 200 ],
+        [ 403, 401 ]
+      ],
+      "SupportMvcController": true
+    },
+    // 程序配置
+    "XyInfo": {
+      "Sm4Key": "6-l$hZ5ncZ28EHlAD6", //长度必须为16个字符
+      "CookieAesKey": "6484weewe1weTYWHTRDFV", //Cookie AES密钥
+      //RSA 密钥在线生成地址：http://www.usey.cn/rsa?bits=1024 格式需要PKCS1
+      "LoginRsaPublic": "<RSAKeyValue><Modulus>vcko5qXU6TWTxsDVuihUXWCXIfDv3FCLITuWdTei7s+9FmAm0amsUT3nnlbA8DR4ySK1x3DS8eeiVs+GXN6wFbQVRNRv3SCQTUukBMbZmjgm67fTBU7G4RJ2P1dIWHtWd/ko9KP4Lye3fKQfE+JkR54d8rZCj/6Vovle7KMdSGE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>",
+      "LoginRsaPrivate": "<RSAKeyValue><Modulus>vcko5qXU6TWTxsDVuihUXWCXIfDv3FCLITuWdTei7s+9FmAm0amsUT3nnlbA8DR4ySK1x3DS8eeiVs+GXN6wFbQVRNRv3SCQTUukBMbZmjgm67fTBU7G4RJ2P1dIWHtWd/ko9KP4Lye3fKQfE+JkR54d8rZCj/6Vovle7KMdSGE=</Modulus><Exponent>AQAB</Exponent><P>3Op6Lv6z3DHBcWZGf+IiBRIVvSB5g/ysN4a5aMM20uuJBG3BsvlMSaoGb9emhk1pS45sPZFVKBhsZMf4E28Rqw==</P><Q>2+0PaiL7L025Zh+IiAmbi9qweC9GpvsJ7+OACqlM9MwWpua5N3gC4fmD3DQMTVApkBaP2wULsJFMBaHhq+eaIw==</Q><DP>PdJQRv54DtLNs5JPgFIj+w9IjhicaNc4yoElObAHk5beTSL55b/mHWc7TeknbMYVBVPh7ojRL9tF2h4ryiR26Q==</DP><DQ>kebFcS5f4dP4iW2mEEn/bVrZ9AG5J5In14PgMDJ9IXI8HOG4QrpVf0EfX3kQKEJkMHknWrAQP0VFX/8zTe5KbQ==</DQ><InverseQ>CBXae8oDUphXXPTROpZzFzSHo3AuGOFAQChLyqgXSRNU4DmGS55PRniGYY7LVJGpb5t8cWBnw/MKFC7qx93dfA==</InverseQ><D>BkCNP2PxKqmgL6kEoXhYpybac7zLOhfRLYwX/c6SaImhcg5C2R9c1ORUMAwtmPwxinbBREu8N0npODDn/UE8zbu2IefnQG9jOXunzx92GJHNwZSWHH38gi5yG/OQt2YfcoLF4Cizf8d/JLmwEb953lSVxZIWLQtzxStmeXPVhC0=</D></RSAKeyValue>"
+    }
+  }
+  

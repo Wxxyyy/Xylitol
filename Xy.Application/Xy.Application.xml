@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xy.Application</name>
+    </assembly>
+    <members>
+        <member name="P:Xy.Application.Admin.UserInput.UserId">
+            <summary>
+            唯一识别ID
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.UserAcc">
+            <summary>
+            用户账户
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.UserPwd">
+            <summary>
+            账户密码
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.AvatarImg">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Nick">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Gender">
+            <summary>
+            性别 - 0 ：男生 1：女生 2：❀
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Email">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Birthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Signature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserInput.Status">
+            <summary>
+            状态 - 0:正常,1:禁用,2:封禁
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userId">
+            <summary>
+            唯一识别Uid
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userAccount">
+            <summary>
+            用户账户
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.nickName">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userGender">
+            <summary>
+            性别 - 0：男生 1：女生 2：❀
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userPhone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userEmail">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userRemark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserListOutput.userStatus">
+            <summary>
+            状态 - 0:正常,1禁用,2封禁
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userId">
+            <summary>
+            唯一识别Uid
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userAccount">
+            <summary>
+            用户账户
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userAvatar">
+            <summary>
+            密码
+            </summary>
+             public string UserPassword { get; set; } = null!;
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.nickName">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userGender">
+            <summary>
+            性别 - 0：男生 1：女生 2：❀
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userPhone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userEmail">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userBirthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userAddress">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userSignature">
+            <summary>
+            用户签名
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userRemark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.userStatus">
+            <summary>
+            状态 - 0:正常,1禁用,2封禁
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.lastLoginTime">
+            <summary>
+            最后登录时间
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.lastLoginIP">
+            <summary>
+            最后登录IP
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.lastLoginDevice">
+            <summary>
+            最后登录设备
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.createdUserId">
+            <summary>
+            创建用户Uid
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.updateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Xy.Application.Admin.UserOutput.updateUserId">
+            <summary>
+            更新用户Id
+            </summary>
+        </member>
+        <member name="T:Xy.Application.Admin.UserQuery">
+            <summary>
+            查询用户检索条件
+            </summary>
+        </member>
+        <member name="T:Xy.Application.Admin.UserService">
+            <summary>
+            用户服务
+            </summary>
+            内置依赖接口：[ITransient：对应暂时/瞬时作用域服务生存期],[IScoped：对应请求作用域服务生存期],[ISingleton：对应单例作用域服务生存期]
+            IDynamicApiController [动态WebApi,需要在swagger中显示就加上]
+        </member>
+        <member name="M:Xy.Application.Admin.UserService.#ctor(Furion.DatabaseAccessor.IRepository{Xy.Core.Entity.SysUser})">
+            <summary>
+            构造/依赖注入
+            </summary>
+        </member>
+        <member name="M:Xy.Application.Admin.UserService.GetUserListByLayer(Xy.Application.Admin.UserQuery)">
+            <summary>
+            获取用户信息列表(分页)
+            </summary>
+            <param name="searchQuery">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Application.Admin.UserService.Add(Xy.Application.Admin.UserInput)">
+            <summary>
+            添加用户
+            </summary>
+        </member>
+        <member name="M:Xy.Application.Admin.UserService.VerificationId(System.String)">
+            <summary>
+            构造方法，判断新生成的ID是否重复
+            </summary>
+            <param name="id">你要用的ID</param>
+            <returns>如果Id没重复就返回你的ID，如果重复了将生成信息ID</returns>
+        </member>
+        <member name="T:Xy.Application.SystemAppService">
+            <summary>
+            系统服务接口
+            </summary>
+        </member>
+        <member name="M:Xy.Application.SystemAppService.GetDescription">
+            <summary>
+            获取系统描述
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

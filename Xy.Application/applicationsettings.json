@@ -1,0 +1,31 @@
+﻿{
+  "$schema": "https://gitee.com/dotnetchina/Furion/raw/v4/schemas/v4/furion-schema.json",
+  "SpecificationDocumentSettings": {
+    "DocumentTitle": "Xylitol | 规范化接口",
+    "GroupOpenApiInfos": [
+      {
+        "Group": "Default",
+        "Title": "规范化接口演示",
+        "Description": " 两情若是长久时.又岂在朝朝暮暮。",
+        "Version": "1.0.0",
+        "TermsOfService": "https://xiaojianjian.cn",
+        "Contact": {
+          "Name": "王向毅",
+          "Url": "https://xiaojianjian.cn",
+          "Email": "wxy@xiaojianjian.cn"
+        },
+        "License": {
+          "Name": "MulanPSL-2.0",
+          "Url": "https://gitee.com/Wxy_5/XyyItemSet/blob/master/LICENSE"
+        }
+      }
+    ]
+  },
+  "CorsAccessorSettings": {
+    "WithExposedHeaders": [
+      "access-token",
+      "x-access-token",
+      "environment"
+    ]
+  }
+}

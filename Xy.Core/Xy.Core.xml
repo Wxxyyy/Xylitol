@@ -1,0 +1,645 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xy.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Xy.Core.Entity.PrimaryIdEntity">
+            <summary>
+            主键id基类
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.PrimaryIdEntity.Id">
+            <summary>
+            主键Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Xy.Core.Entity.BaseEntity">
+            <summary>
+            框架实体基类
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.BaseEntity.CreatedDt">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.BaseEntity.CreatedUid">
+            <summary>
+            创建用户Uid
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.BaseEntity.UpdatedDt">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.BaseEntity.UpdatedUid">
+            <summary>
+            更新用户Id
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.BaseEntity.IsDeleted">
+            <summary>
+            软删除标记
+            </summary>
+        </member>
+        <member name="T:Xy.Core.Entity.SysUser">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Uid">
+            <summary>
+            唯一识别Uid
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Account">
+            <summary>
+            账户用户
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Nick">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Gender">
+            <summary>
+            性别 - 0：男生 1：女生 2：❀
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Email">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Birthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Signature">
+            <summary>
+            用户签名
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.Status">
+            <summary>
+            状态 - 0:正常,1禁用,2封禁
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.LastLoginDt">
+            <summary>
+            最后登录时间
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.LastLoginIp">
+            <summary>
+            最后登录IP
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Entity.SysUser.LastLoginDev">
+            <summary>
+            最后登录设备
+            </summary>
+        </member>
+        <member name="M:Xy.Core.Entity.SysUser.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Xy.Core.Entity.SysUser},Microsoft.EntityFrameworkCore.DbContext,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="entityBuilder"></param>
+            <param name="dbContext"></param>
+            <param name="dbContextLocator"></param>
+        </member>
+        <member name="F:Xy.Core.Module.Paged.PageBaseQuery._order">
+            <summary>
+            排序方式asc需要你服务器按顺序排序，desc倒序排序
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PageBaseQuery.Order">
+            <summary>
+            排序方式asc需要你服务器按顺序排序，desc倒序排序
+            </summary>
+            <example>asc</example>
+        </member>
+        <member name="F:Xy.Core.Module.Paged.PageBaseQuery._offset">
+            <summary>
+            起始行，比如你数据库有100条数据，offset等于10表示你服务器需要从第10条数据返回结果
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PageBaseQuery.Offset">
+            <summary>
+            起始行，比如你数据库有100条数据，offset等于10表示你服务器需要从第10条数据返回结果
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Module.Paged.PageBaseQuery._search">
+            <summary>
+            用户在输入框搜索的关键词
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PageBaseQuery.Search">
+            <summary>
+            用户在输入框搜索的关键词
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Module.Paged.PageBaseQuery._page">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PageBaseQuery.Page">
+            <summary>
+            页数
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="F:Xy.Core.Module.Paged.PageBaseQuery._limit">
+            <summary>
+            查询条数(每次读取多少条数据)
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PageBaseQuery.Limit">
+            <summary>
+            查询条数(每次读取多少条数据)
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="T:Xy.Core.Module.Paged.PagedExtensions">
+            <summary>
+            分页扩展类
+            </summary>
+        </member>
+        <member name="M:Xy.Core.Module.Paged.PagedExtensions.ToLyearPagedList``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Lyear 分页扩展(返回支持lyear格式的数据)
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="list"></param>
+            <param name="totalCount">总数据条数</param>
+            <param name="pageIndex">查询页数</param>
+            <param name="pageSize">条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Module.Paged.PagedExtensions.ToLyearPagedList``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Layui分页扩展(返回支持layui格式的数据)
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="list"></param>
+            <param name="pageIndex">查询页数</param>
+            <param name="pageSize">条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Module.Paged.PagedExtensions.ToLyearPagedListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            分页拓展
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="entities"></param>
+            <param name="pageIndex">页码，必须大于0</param>
+            <param name="pageSize"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Xy.Core.Module.Paged.PagedResult`1">
+            <summary>
+            数据集合(Lyear格式的数据)
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PagedResult`1.Rows">
+            <summary>
+            数据集
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PagedResult`1.Total">
+            <summary>
+            总数据条数
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PagedResult`1.Page">
+            <summary>
+            当前索引页
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PagedResult`1.Limit">
+            <summary>
+            每页显示条数
+            </summary>
+        </member>
+        <member name="P:Xy.Core.Module.Paged.PagedResult`1.TotalPage">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:Xy.Core.UnifyResult.XyResult`1.Success">
+            <summary>
+            执行成功
+            </summary>
+        </member>
+        <member name="P:Xy.Core.UnifyResult.XyResult`1.Code">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:Xy.Core.UnifyResult.XyResult`1.Message">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:Xy.Core.UnifyResult.XyResult`1.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:Xy.Core.UnifyResult.XyResult`1.Extras">
+            <summary>
+            附加数据
+            </summary>
+        </member>
+        <member name="P:Xy.Core.UnifyResult.XyResult`1.Timestamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="T:Xy.Core.UnifyResult.XyResultProvider">
+            <summary>
+            规范化RESTful风格返回值
+            </summary>
+        </member>
+        <member name="M:Xy.Core.UnifyResult.XyResultProvider.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext,Furion.FriendlyException.ExceptionMetadata)">
+            <summary>
+            异常返回内容处理
+            </summary>
+            <param name="context"></param>
+            <param name="metadata"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Xy.Core.UnifyResult.XyResultProvider.OnResponseStatusCodes(Microsoft.AspNetCore.Http.HttpContext,System.Int32,Furion.UnifyResult.UnifyResultSettingsOptions)">
+            <summary>
+            处理输出状态码
+            </summary>
+            <param name="context"></param>
+            <param name="statusCode"></param>
+            <param name="unifyResultSettings"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Xy.Core.UnifyResult.XyResultProvider.OnSucceeded(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext,System.Object)">
+            <summary>
+            成功返回内容处理
+            </summary>
+            <param name="context"></param>
+            <param name="data"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Xy.Core.UnifyResult.XyResultProvider.OnValidateFailed(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Furion.DataValidation.ValidationMetadata)">
+            <summary>
+            验证失败返回内容处理
+            </summary>
+            <param name="context"></param>
+            <param name="metadata"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Xy.Core.UnifyResult.XyResultProvider.RESTfulResult(System.Int32,System.Boolean,System.Object,System.Object)">
+            <summary>
+            返回 RESTful 风格结果集
+            </summary>
+            <param name="statusCode"></param>
+            <param name="succeeded"></param>
+            <param name="data"></param>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Xy.Core.Utils.IDGenHelper._random">
+            <summary>
+            短 ID 生成器期初数据
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.IDGenHelper.ThreadLock">
+            <summary>
+            线程安全锁
+            </summary>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.NextId(System.Int32)">
+            <summary>
+            生成8位的纯数字ID(可改长)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.NextLetterId(System.Int32)">
+            <summary>
+            生成8位的纯字母ID(可改长)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.NextStrNumberId(System.Int32)">
+            <summary>
+            生成8位的字母数字ID(可改长)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.NextHybridizationId">
+            <summary>
+            生成8位的杂交ID(可改长)
+            杂交 = 数字 + 字母 + 特殊字符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.SetCharacters(System.String)">
+            <summary>
+            设置参与运算的字符，最少 50 位
+            </summary>
+            <param name="characters"></param>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.SetSeed(System.Int32)">
+            <summary>
+            设置种子ID
+            </summary>
+            <param name="seed"></param>
+        </member>
+        <member name="M:Xy.Core.Utils.IDGenHelper.Reset">
+            <summary>
+            重置所有配置
+            </summary>
+        </member>
+        <member name="T:Xy.Core.Utils.SM4">
+            <summary>
+            SM4工具类
+            </summary>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.GetULongByBe(System.Byte[],System.Int32)">
+            <summary>
+            加密 非线性τ函数B=τ(A)
+            </summary>
+            <param name="b"></param>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.PutULongToBe(System.Int64,System.Byte[],System.Int32)">
+            <summary>
+            解密 非线性τ函数B=τ(A)
+            </summary>
+            <param name="n"></param>
+            <param name="b"></param>
+            <param name="i"></param>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Rotl(System.Int64,System.Int32)">
+            <summary>
+            循环移位,为32位的x循环左移n位
+            </summary>
+            <param name="x"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Swap(System.Int64[],System.Int32)">
+            <summary>
+            将密钥逆序
+            </summary>
+            <param name="sk"></param>
+            <param name="i"></param>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4.SboxTable">
+            <summary>
+            S盒 
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4.FK">
+            <summary>
+            系统参数FK
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4.CK">
+            <summary>
+            固定参数CK
+            </summary>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4Sbox(System.Byte)">
+            <summary>
+            Sm4的S盒取值
+            </summary>
+            <param name="inch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4Lt(System.Int64)">
+            <summary>
+            线性变换 L
+            </summary>
+            <param name="ka"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4F(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            轮函数 F
+            </summary>
+            <param name="x0"></param>
+            <param name="x1"></param>
+            <param name="x2"></param>
+            <param name="x3"></param>
+            <param name="rk"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4CalciRk(System.Int64)">
+            <summary>
+            轮密钥rk
+            </summary>
+            <param name="ka"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.SetKey(System.Int64[],System.Byte[])">
+            <summary>
+            加密密钥
+            </summary>
+            <param name="SK"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4OneRound(System.Int64[],System.Byte[],System.Byte[])">
+            <summary>
+            解密函数
+            </summary>
+            <param name="sk">轮密钥</param>
+            <param name="input">输入分组的密文</param>
+            <param name="output">输出的对应的分组明文</param>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Padding(System.Byte[],System.Int32)">
+            <summary>
+            补足 16 进制字符串的 0 字符，返回不带 0x 的16进制字符串
+            </summary>
+            <param name="input"></param>
+            <param name="mode">1表示加密，0表示解密</param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.SetKeyEnc(Xy.Core.Utils.Sm4Context,System.Byte[])">
+            <summary>
+            设置加密的key
+            </summary>
+            <param name="ctx"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4SetKeyDec(Xy.Core.Utils.Sm4Context,System.Byte[])">
+            <summary>
+            设置解密的key
+            </summary>
+            <param name="ctx"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4CryptEcb(Xy.Core.Utils.Sm4Context,System.Byte[])">
+            <summary>
+            ECB
+            </summary>
+            <param name="ctx"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4.Sm4CryptCbc(Xy.Core.Utils.Sm4Context,System.Byte[],System.Byte[])">
+            <summary>
+            CBC
+            </summary>
+            <param name="ctx"></param>
+            <param name="iv"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Xy.Core.Utils.Sm4Context">
+            <summary>
+            SM4处理中心
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.Sm4Context.Mode">
+            <summary>
+            1表示加密，0表示解密
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.Sm4Context.Key">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.Sm4Context.IsPadding">
+            <summary>
+            是否补足16进制字符串
+            </summary>
+        </member>
+        <member name="T:Xy.Core.Utils.SM4Utils">
+            <summary>
+            Sm4算法  
+            对标国际DES算法
+            加密和解密结构相同，只不过，解密密钥是加密密钥的逆序
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4Utils.Key">
+            <summary>
+            秘钥
+            不同的key，加密出来的数据不一样，所以此处设定好key以后，禁止修改
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4Utils.Iv">
+            <summary>
+            向量
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4Utils.HexString">
+            <summary>
+            明文是否是十六进制
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4Utils.CryptoMode">
+            <summary>
+            加密模式(默认ECB)
+            统一改为ECB模式
+            </summary>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4Utils.加密(System.String)">
+            <summary>
+            SM4加密
+            </summary>
+            <param name="plainText">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4Utils.Encrypt_ECB(System.String)">
+            <summary>
+            ECB加密
+            </summary>
+            <param name="plainText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4Utils.Encrypt_CBC(System.String)">
+            <summary>
+            CBC加密
+            </summary>
+            <param name="plainText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4Utils.解密(System.String)">
+            <summary>
+            SM4解密
+            </summary>
+            <param name="cipherText">密文</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4Utils.Decrypt_ECB(System.String)">
+            <summary>
+            ECB解密
+            </summary>
+            <param name="cipherText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xy.Core.Utils.SM4Utils.Decrypt_CBC(System.String)">
+            <summary>
+            CBC解密
+            </summary>
+            <param name="cipherText"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Xy.Core.Utils.SM4Utils.Sm4CryptoEnum">
+            <summary>
+            加密类型
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4Utils.Sm4CryptoEnum.ECB">
+            <summary>
+            ECB(电码本模式)
+            </summary>
+        </member>
+        <member name="F:Xy.Core.Utils.SM4Utils.Sm4CryptoEnum.CBC">
+            <summary>
+            CBC(密码分组链接模式)
+            </summary>
+        </member>
+    </members>
+</doc>
